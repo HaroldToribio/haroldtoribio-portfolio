@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto | Harold Toribio</title>
+  <meta name="description" content="Formulario de contacto para comunicarse con Harold Toribio — Desarrollador Full Stack en formación.">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Menú principal" class="nav">
+      <div class="nav-left"><a class="logo" href="index.html">Harold<span class="accent">.</span></a></div>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-navigation"><i class="ri-menu-line"></i></button>
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="index.html#hero">Inicio</a></li>
+        <li><a href="index.html#about">Sobre mí</a></li>
+        <li><a href="index.html#skills">Habilidades</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section reveal" style="padding-top:120px;">
+      <div class="container">
+        <h2 class="section-title">Contáctame</h2>
+
+        <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px">
+          <div style="background:var(--card);border:1px solid var(--border);padding:20px;border-radius:12px">
+            <h3 style="color:var(--accent-2)">Información</h3>
+            <p><strong>Email:</strong> <a href="mailto:htoribio88@gmail.com">htoribio88@gmail.com</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/HaroldToribio" target="_blank" rel="noopener">github.com/HaroldToribio</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230" target="_blank" rel="noopener">linkedin.com/in/harold-toribio-de-jesus</a></p>
+            <p style="color:#cfcfcf;margin-top:12px">Respondo normalmente en menos de 24 horas.</p>
+          </div>
+
+          <div style="background:var(--card);border:1px solid var(--border);padding:20px;border-radius:12px">
+            <h3 style="color:var(--accent-2)">Enviar Mensaje</h3>
+
+            <form action="https://formsubmit.co/htoribio88@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="thanks.html">
+
+              <label for="name" class="sr-only">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Tu nombre" required style="width:100%;padding:10px;margin-bottom:10px;background:#0b0b0b;border:1px solid var(--border);border-radius:8px;color:#fff">
+
+              <label for="email" class="sr-only">Correo</label>
+              <input id="email" name="email" type="email" placeholder="Tu correo" required style="width:100%;padding:10px;margin-bottom:10px;background:#0b0b0b;border:1px solid var(--border);border-radius:8px;color:#fff">
+
+              <label for="message" class="sr-only">Mensaje</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tu mensaje" required style="width:100%;padding:10px;margin-bottom:10px;background:#0b0b0b;border:1px solid var(--border);border-radius:8px;color:#fff"></textarea>
+
+              <button class="btn btn-primary" type="submit" style="width:100%">Enviar Mensaje</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about"><h3>Harold Toribio</h3><p>Portafolio digital y contacto profesional.</p></div>
+      <div class="footer-links"><h4>Secciones</h4><ul><li><a href="index.html#about">Sobre mí</a></li><li><a href="index.html#projects">Proyectos</a></li><li><a href="index.html#skills">Habilidades</a></li></ul></div>
+      <div class="footer-social"><h4>Redes</h4><a href="https://github.com/HaroldToribio" target="_blank" rel="noopener">GitHub</a><br><a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Harold Toribio — Todos los derechos reservados.</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyectos | Harold Toribio</title>
+  <meta name="description" content="Listado de proyectos de Harold Toribio — Museo Virtual, Gestión de Autobuses, TutorConnect y más.">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Menú principal" class="nav">
+      <div class="nav-left"><a class="logo" href="index.html">Harold<span class="accent">.</span></a></div>
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-navigation"><i class="ri-menu-line"></i></button>
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="index.html#hero">Inicio</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="index.html#skills">Habilidades</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section reveal" style="padding-top:120px">
+      <div class="container">
+        <h1 class="section-title">Proyectos</h1>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="img/projects/museo.jpg" alt="Museo Virtual de Hip-Hop — captura" loading="lazy">
+            <div class="project-content">
+              <h3>Museo Virtual de Hip-Hop</h3>
+              <p>Frontend con HTML, CSS, JS y Bootstrap.</p>
+              <div class="actions"><a class="btn btn-project" href="https://github.com/HaroldToribio/MuseoVirtualHipHop" target="_blank" rel="noopener">Ver GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="img/projects/buses.jpg" alt="Sistema de Gestión de Autobuses — captura" loading="lazy">
+            <div class="project-content">
+              <h3>Gestión de Autobuses</h3>
+              <p>API en .NET + React. CRUD y módulo de reservas.</p>
+              <div class="actions"><a class="btn btn-project" href="https://github.com/HaroldToribio/BusManagementSystem" target="_blank" rel="noopener">Ver GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="img/projects/tutorconnect.jpg" alt="TutorConnect — captura" loading="lazy">
+            <div class="project-content">
+              <h3>TutorConnect</h3>
+              <p>Proyecto informativo para solicitud de tutorías.</p>
+              <div class="actions"><a class="btn btn-project" href="https://github.com/HaroldToribio/TutorConnect" target="_blank" rel="noopener">Ver GitHub</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about"><h3>Harold Toribio</h3><p>Portafolio profesional.</p></div>
+      <div class="footer-links"><h4>Secciones</h4><ul><li><a href="index.html#about">Sobre mí</a></li><li><a href="index.html#skills">Habilidades</a></li><li><a href="contact.html">Contacto</a></li></ul></div>
+      <div class="footer-social"><h4>Redes</h4><a href="https://github.com/HaroldToribio" target="_blank" rel="noopener">GitHub</a><br><a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Harold Toribio — Todos los derechos reservados.</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

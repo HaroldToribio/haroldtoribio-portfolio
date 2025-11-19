@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harold Toribio | Desarrollador Full Stack</title>
+
+  <!-- SEO & Social -->
+  <meta name="description" content="Portafolio de Harold Toribio — Estudiante de Ingeniería en Sistemas y desarrollador Full Stack. Proyectos en GitHub con .NET, Django, React, Python y JavaScript.">
+  <meta name="keywords" content="Harold Toribio, portafolio, desarrollador full stack, Python, JavaScript, .NET, Django, SQL Server, GitHub">
+  <meta name="author" content="Harold Toribio">
+  <meta property="og:title" content="Portafolio de Harold Toribio">
+  <meta property="og:description" content="Proyectos Full Stack, habilidades técnicas y contacto profesional.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://haroldtoribio.github.io/">
+  <meta property="og:image" content="img/preview.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="style.css" as="style">
+
+  <!-- Scripts -->
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Menú principal" class="nav">
+      <div class="nav-left">
+        <a class="logo" href="index.html">Harold<span class="accent">.dev</span></a>
+      </div>
+
+      <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-navigation">
+        <i class="ri-menu-line"></i>
+      </button>
+
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main">
+
+    <!-- HERO -->
+    <section id="hero" class="hero reveal">
+      <div class="container hero-inner">
+        <h1>Hola, soy <span class="accent">Harold Toribio</span></h1>
+        <p class="typing-text">Desarrollador Full Stack en formación</p>
+        <p class="hero-description">
+          Estudiante de término de Ingeniería en Sistemas Computacionales. Construyo aplicaciones web modernas, escalables y enfocadas en el usuario.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Ver Proyectos</a>
+          <a class="btn btn-secondary" href="Harold-Toribio-CV.pdf" download>Descargar CV</a>
+        </div>
+
+        <div class="social-icons" aria-hidden="false">
+          <a href="https://github.com/HaroldToribio" target="_blank" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+          <a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+          <a href="mailto:htoribio88@gmail.com" aria-label="Enviar email"><i class="ri-mail-send-fill"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section reveal" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section-title">Sobre mí</h2>
+        <div class="about-inner">
+          <div class="about-text">
+            <p>
+              Soy <strong>Harold Toribio</strong>, estudiante de término en Ingeniería en Sistemas Computacionales con experiencia en
+              <strong>HTML5, CSS3, JavaScript, Python, Django, Flask, C#, .NET y ASP.NET</strong>. Manejo bases de datos como <strong>MySQL</strong> y <strong>SQL Server</strong>.
+              Me interesa el desarrollo Full Stack y el diseño de soluciones limpias y mantenibles.
+            </p>
+            <a class="btn btn-about" href="#projects">Ver mis proyectos</a>
+          </div>
+          <div class="about-img" aria-hidden="true">
+            <img src="img/profile.jpg" alt="Fotografía de Harold Toribio" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section reveal" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title" class="section-title">Habilidades Técnicas</h2>
+
+        <div class="skills-grid">
+          <div class="skill-card">HTML5</div>
+          <div class="skill-card">CSS3</div>
+          <div class="skill-card">JavaScript</div>
+          <div class="skill-card">Bootstrap</div>
+
+          <div class="skill-card">Python</div>
+          <div class="skill-card">Django</div>
+          <div class="skill-card">Flask</div>
+
+          <div class="skill-card">C#</div>
+          <div class="skill-card">.NET / ASP.NET</div>
+
+          <div class="skill-card">MySQL</div>
+          <div class="skill-card">SQL Server</div>
+
+          <div class="skill-card">Git / GitHub</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title" class="section-title">Proyectos Destacados</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="img/projects/museo.jpg" alt="Museo Virtual de Hip-Hop — captura" loading="lazy">
+            <div class="project-content">
+              <h3>Museo Virtual de Hip-Hop</h3>
+              <p>Sitio temático sobre el rap de los 90. Construido con HTML, CSS, JavaScript y Bootstrap.</p>
+              <span class="tech-stack">HTML • CSS • JS • Bootstrap</span>
+              <div class="actions">
+                <a class="btn btn-project" href="https://github.com/HaroldToribio/MuseoVirtualHipHop" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn btn-project" href="#" target="_blank" rel="noopener">Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="img/projects/buses.jpg" alt="Sistema de Gestión de Autobuses — captura" loading="lazy">
+            <div class="project-content">
+              <h3>Gestión de Autobuses</h3>
+              <p>API en .NET + frontend en React con CRUD de autobuses, rutas, horarios y reservas.</p>
+              <span class="tech-stack">.NET • C# • React • SQL Server</span>
+              <div class="actions">
+                <a class="btn btn-project" href="https://github.com/HaroldToribio/BusManagementSystem" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="img/projects/tutorconnect.jpg" alt="TutorConnect — captura" loading="lazy">
+            <div class="project-content">
+              <h3>TutorConnect</h3>
+              <p>Plataforma para la gestión y solicitud de tutorías universitarias.</p>
+              <span class="tech-stack">HTML • CSS • JS</span>
+              <div class="actions">
+                <a class="btn btn-project" href="https://github.com/HaroldToribio/TutorConnect" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:20px;">
+          <a class="btn btn-primary" href="projects.html">Ver todos los proyectos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT PREVIEW -->
+    <section id="contact-preview" class="section reveal" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Contacto</h2>
+        <p style="text-align:center; color:#d0d0d0; max-width:900px; margin:0 auto 14px;">
+          ¿Interesado en colaborar o contratarme? Escríbeme: <a href="mailto:htoribio88@gmail.com">htoribio88@gmail.com</a>
+          — o visita <a href="https://github.com/HaroldToribio">mi GitHub</a> y <a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230">LinkedIn</a>.
+        </p>
+        <div style="text-align:center;"><a class="btn btn-secondary" href="contact.html">Ir a Contacto</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo" class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Harold Toribio</h3>
+        <p>Desarrollador Full Stack en formación — Santo Domingo, RD.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Conéctate</h4>
+        <a href="https://github.com/HaroldToribio" target="_blank" rel="noopener">GitHub</a><br>
+        <a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230" target="_blank" rel="noopener">LinkedIn</a><br>
+        <a href="mailto:htoribio88@gmail.com">htoribio88@gmail.com</a>
+      </div>
+    </div>
+
+    <p class="footer-copy">© <span id="year"></span> Harold Toribio — Todos los derechos reservados.</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
