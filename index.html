@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="description" content="Portafolio de Harold Toribio - Ingeniero en Sistemas & Full Stack Developer especializado en .NET y React.">
+  <meta property="og:title" content="Harold Toribio | Full Stack Developer">
+  <meta property="og:description" content="Ingeniero en Sistemas especializado en soluciones escalables .NET y React. Mira mis proyectos.">
+  <meta property="og:image" content="img/profile.webp"> <meta property="og:type" content="website">
+
+  <title>Harold Toribio | Full Stack Developer</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="icon" type="image/png" href="img/icons/favicon.png"> 
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar container">
+      <div class="logo">Harold T.</div>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          
+          <div class="hero-profile-img">
+            <img src="img/profile.webp" alt="Harold Toribio" onerror="this.src='img/profile.jpg'">
+          </div>
+
+          <h1 class="hero-title">Harold Toribio de Jesús</h1>
+          <p class="hero-subtitle">Ingeniero en Sistemas &amp; Full Stack Developer</p>
+          <p class="hero-description">
+            Especializado en el desarrollo de soluciones escalables, transformando requerimientos complejos en aplicaciones robustas con .NET y React.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+            <a href="Harold-Toribio-CV.pdf" class="btn btn-secondary" download>Descargar CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="about">
+      <div class="container">
+        <h2 class="section-title">Sobre mí</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Soy <strong>Ingeniero en Sistemas</strong> con una sólida trayectoria en el desarrollo de software. Mi enfoque combina la precisión de la ingeniería de backend (.NET/SQL) con la creatividad del desarrollo frontend moderno.
+            </p>
+            <p>
+              He liderado equipos y gestionado proyectos técnicos (experiencia previa como Team Manager), lo que me permite entender no solo el código, sino el negocio detrás de él. Actualmente enfocado en arquitecturas Cloud (Azure/AWS) y análisis de datos.
+            </p>
+          </div>
+          <div class="about-info">
+            <h3>Información de contacto</h3>
+            <p><strong>Email:</strong> <a href="mailto:htoribio88@gmail.com">htoribio88@gmail.com</a></p>
+            <p><strong>Ubicación:</strong> Santo Domingo, República Dominicana</p>
+            <p><strong>Disponibilidad:</strong> Freelance / Full-time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="projects">
+      <div class="container">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="card-image">
+              <img src="img/projects/buses.jpg" alt="Sistema de Gestión de Autobuses" class="project-img">
+            </div>
+            
+            <div class="project-header">
+              <h3>Gestión de Autobuses</h3>
+            </div>
+            <p class="project-description">
+              Sistema integral para administración de flotas. Arquitectura API REST en .NET Core consumida por un cliente React. Manejo de concurrencia y reportes en tiempo real.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">.NET Core</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">SQL Server</span>
+            </div>
+            <a href="#" class="project-link">Ver Código →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-image">
+               <img src="img/projects/museo.jpg" alt="Museo Virtual Hip Hop" class="project-img">
+            </div>
+
+            <div class="project-header">
+              <h3>Museo Virtual 90's Hip-Hop</h3>
+            </div>
+            <p class="project-description">
+              Experiencia web inmersiva. Diseño UI/UX enfocado en la narrativa visual, animaciones CSS avanzadas y manipulación del DOM para una navegación fluida.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML5/CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
+            <a href="https://haroldtoribio.github.io/MuseoVirtualHipHop/" class="project-link" target="_blank">Ver Demo →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-image">
+               <img src="img/projects/tutorconnect.jpg" alt="Plataforma TutorConnect" class="project-img">
+            </div>
+
+            <div class="project-header">
+              <h3>TutorConnect</h3>
+            </div>
+            <p class="project-description">
+              Plataforma EdTech "On-Demand". Lógica compleja de filtrado para conectar estudiantes con tutores basado en especialidad y horarios.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js Basics</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+            <a href="https://haroldtoribio.github.io/TutorConnect/" class="project-link" target="_blank">Ver Demo →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="skills">
+      <div class="container">
+        <h2 class="section-title">Stack Tecnológico</h2>
+        <div class="skills-grid">
+          
+          <div class="skill-category">
+            <h3>Backend & DB</h3>
+            <ul class="skill-list">
+              <li>C# / .NET Core</li>
+              <li>Entity Framework</li>
+              <li>SQL Server / SSAS</li>
+              <li>APIs RESTful</li>
+              <li>Python (Data Analysis)</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <ul class="skill-list">
+              <li>React.js</li>
+              <li>JavaScript (ES6+)</li>
+              <li>HTML5 & CSS3</li>
+              <li>Bootstrap / Tailwind</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Cloud & DevOps</h3>
+            <ul class="skill-list">
+              <li>Azure Fundamentals</li>
+              <li>AWS Basics</li>
+              <li>Git / GitHub</li>
+              <li>Power BI</li>
+              <li>Scrum / Agile</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-wrapper">
+          
+          <p class="contact-intro">
+            Estoy disponible para nuevas oportunidades. Ya sea para consultoría, desarrollo full-stack o roles de ingeniería de datos.
+          </p>
+
+          <form action="https://formspree.io/f/xjknodld" method="POST" class="contact-form">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Tu Nombre" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Tu Email" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5" placeholder="¿Cómo puedo ayudarte?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+          </form>
+
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230" target="_blank" class="social-btn">LinkedIn</a>
+            <a href="https://github.com/HaroldToribio" target="_blank" class="social-btn">GitHub</a>
+            <a href="mailto:htoribio88@gmail.com" class="social-btn">Email</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Harold Toribio de Jesús.</p>
+      <p class="footer-subtitle">Construido con código limpio y pasión por la ingeniería.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
