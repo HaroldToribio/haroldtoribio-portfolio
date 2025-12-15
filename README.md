@@ -12,6 +12,7 @@
 
 ## 📸 Vista Previa
 
+https://github.com/user-attachments/assets/d791f43b-c655-4c0b-9e92-dfbc2e56c787
 
 ---
 
