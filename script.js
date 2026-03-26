@@ -1,100 +1,168 @@
 /* ============================================
-   SCRIPT.JS - FUNCIONALIDAD COMPLETA
+   HAROLD TORIBIO · PORTFOLIO JS
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', function() {
-  
-  // 1. ACTUALIZACIÓN AUTOMÁTICA DEL AÑO (Footer)
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+// ── CUSTOM CURSOR ──────────────────────────
+const cursor = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursorDot');
 
-  // 2. MENÚ HAMBURGUESA
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
 
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', function() {
-      menuToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      
-      // Accesibilidad: cambiar aria-expanded
-      const isExpanded = menuToggle.classList.contains('active');
-      menuToggle.setAttribute('aria-expanded', isExpanded);
-    });
-  }
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursorDot.style.left = mouseX + 'px';
+  cursorDot.style.top = mouseY + 'px';
+});
 
-  // 3. CERRAR MENÚ AL HACER CLICK EN UN ENLACE
-  const navLinks = document.querySelectorAll('.nav-menu a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      if (menuToggle.classList.contains('active')) {
-        menuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
+function animateCursor() {
+  cursorX += (mouseX - cursorX) * 0.12;
+  cursorY += (mouseY - cursorY) * 0.12;
+  cursor.style.left = cursorX + 'px';
+  cursor.style.top = cursorY + 'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Hover effect on interactive elements
+const hoverables = document.querySelectorAll('a, button, .project-card, .stack-group, .contact-link, input, textarea');
+hoverables.forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
+});
+
+
+// ── NAV SCROLL ─────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+
+// ── MOBILE MENU ────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('is-open');
+  mobileMenu.classList.toggle('is-open');
+});
+
+document.querySelectorAll('.mobile-link, .mobile-cta').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('is-open');
+    mobileMenu.classList.remove('is-open');
   });
+});
 
-  // 4. SCROLL SUAVE (Compatibilidad extra)
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      // Evitar error si el href es solo "#"
-      if (href === '#') return;
-      
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        // Offset para el header sticky (ajustar si el header cambia de altura)
-        const headerOffset = 80; 
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
+// ── REVEAL ON SCROLL ───────────────────────
+const reveals = document.querySelectorAll('.reveal');
 
-  // 5. EFECTO DE SOMBRA EN NAVBAR AL SCROLLEAR
-  const header = document.querySelector('.header');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-      header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.4)';
-      header.style.padding = '0.5rem 0'; // Efecto de encogimiento sutil
-    } else {
-      header.style.boxShadow = 'var(--shadow-sm)';
-      header.style.padding = 'var(--spacing-sm) 0'; // Volver al tamaño original
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      // Stagger siblings
+      const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.is-visible)'));
+      const i = siblings.indexOf(entry.target);
+      setTimeout(() => {
+        entry.target.classList.add('is-visible');
+      }, i * 80);
+      observer.unobserve(entry.target);
     }
-    // Transición suave para el padding añadida vía JS o asegurar que esté en CSS
-    header.style.transition = 'all 0.3s ease'; 
   });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -40px 0px'
+});
 
-  // 6. ANIMACIÓN AL HACER SCROLL (Scroll Reveal)
-  // Esto hace que los elementos aparezcan suavemente cuando entran en pantalla
-  const observerOptions = {
-    threshold: 0.1 // Se activa cuando el 10% del elemento es visible
-  };
+reveals.forEach(el => observer.observe(el));
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Solo animar una vez
-      }
-    });
-  }, observerOptions);
 
-  // Seleccionamos qué elementos queremos animar
-  const elementsToAnimate = document.querySelectorAll('.project-card, .skill-category, .about-content, .contact-wrapper');
-  
-  elementsToAnimate.forEach(el => {
-    el.classList.add('hidden-element'); // Clase inicial (ver CSS abajo)
-    observer.observe(el);
+// ── TILT EFFECT ON CARDS ───────────────────
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const rotX = ((y - cy) / cy) * -4;
+    const rotY = ((x - cx) / cx) * 4;
+    card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
   });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'transform 0.5s ease';
+  });
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'transform 0.1s ease, border-color 0.3s, box-shadow 0.3s';
+  });
+});
 
+
+// ── SMOOTH SCROLL FOR NAV LINKS ────────────
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+
+// ── CONTACT FORM ───────────────────────────
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const name = document.getElementById('name').value;
+
+    btn.textContent = '✓ Mensaje enviado';
+    btn.style.background = 'rgba(0, 229, 160, 0.2)';
+    btn.style.color = 'var(--accent)';
+    btn.style.border = '1px solid var(--accent-mid)';
+
+    setTimeout(() => {
+      btn.innerHTML = 'Enviar mensaje <span>→</span>';
+      btn.style = '';
+      form.reset();
+    }, 3000);
+
+    // Build mailto link as fallback
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const mailtoHref = `mailto:htoribio88@gmail.com?subject=Contacto desde portafolio - ${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nDe: ' + name + ' <' + email + '>')}`;
+    window.location.href = mailtoHref;
+  });
+}
+
+
+// ── ACTIVE NAV LINK ON SCROLL ──────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, { threshold: 0.5 });
+
+sections.forEach(s => sectionObserver.observe(s));
+
+
+// ── STAGGER HERO ANIMATIONS ────────────────
+window.addEventListener('load', () => {
+  const heroElements = document.querySelectorAll('.hero .reveal');
+  heroElements.forEach((el, i) => {
+    setTimeout(() => el.classList.add('is-visible'), 200 + i * 150);
+  });
 });
