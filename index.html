@@ -1,534 +1,489 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Harold Toribio — Desarrollador Web Full Stack & Analista de Datos. Especializado en .NET Core, React y soluciones Cloud para Fintech & Banca Digital." />
-  <title>Harold Toribio · Full Stack Developer & Data Analyst</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Harold Toribio — Full Stack Developer & Data Analyst. Ingeniero en Sistemas Computacionales, Santo Domingo RD."/>
+  <title>Harold Toribio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
+<!-- ░░ CURSOR ░░ -->
+<div id="cur" class="cur"></div>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#inicio" class="nav-logo">HT<span class="accent">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-        <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
-        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-        <li><a href="#stack" class="nav-link">Stack</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
-      <a href="Harold_Toribio_CV.pdf" download class="nav-cta">Descargar CV <span class="arrow">↓</span></a>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#sobre-mi" class="mobile-link">Sobre mí</a>
-      <a href="#experiencia" class="mobile-link">Experiencia</a>
-      <a href="#proyectos" class="mobile-link">Proyectos</a>
-      <a href="#stack" class="mobile-link">Stack</a>
-      <a href="#contacto" class="mobile-link">Contacto</a>
-      <a href="Harold_Toribio_CV.pdf" download class="mobile-cta">Descargar CV</a>
-    </div>
+<!-- ░░ LOADER ░░ -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <span class="loader-name">Harold Toribio</span>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+    <span class="loader-pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<!-- ░░ NAV ░░ -->
+<header class="nav" id="nav">
+  <a href="#" class="nav-logo">HT</a>
+  <nav class="nav-links">
+    <a href="#work" data-en="Work" data-es="Trabajo">Trabajo</a>
+    <a href="#about" data-en="About" data-es="Sobre mí">Sobre mí</a>
+    <a href="#stack" data-en="Stack" data-es="Stack">Stack</a>
+    <a href="#contact" data-en="Contact" data-es="Contacto">Contacto</a>
   </nav>
+  <div class="nav-right">
+    <button class="lang-toggle" id="langToggle">EN</button>
+    <a href="Harold-Toribio-CV.pdf" download class="nav-cta">
+      <span data-en="Resume" data-es="CV">CV</span> ↓
+    </a>
+  </div>
+  <button class="nav-burger" id="burger"><span></span><span></span></button>
+</header>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg">
-      <div class="grid-lines"></div>
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
-    </div>
-    <div class="hero-inner">
-      <div class="hero-tag reveal">
-        <span class="tag-dot"></span>
-        Disponible · Santo Domingo, RD
-      </div>
-      <h1 class="hero-title reveal">
-        <span class="hero-name">Harold<br>Toribio</span>
-        <span class="hero-role">
-          <em>Full Stack</em><br>Developer &<br>Data Analyst
-        </span>
-      </h1>
-      <p class="hero-desc reveal">
-        Ingeniero en Sistemas (UNPHU) especializado en <strong>.NET Core, React y Python</strong>. Construyo sistemas que entienden el negocio antes de escribir la primera línea de código.
+<div class="mob-menu" id="mobMenu">
+  <a href="#work" class="mob-link">Trabajo</a>
+  <a href="#about" class="mob-link">Sobre mí</a>
+  <a href="#stack" class="mob-link">Stack</a>
+  <a href="#contact" class="mob-link">Contacto</a>
+  <a href="Harold-Toribio-CV.pdf" download class="mob-link mob-cv">Descargar CV ↓</a>
+</div>
+
+<!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░
+     SCENE 1 — HERO
+░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<section class="scene" id="hero">
+  <div class="hero-split">
+
+    <!-- LEFT: text -->
+    <div class="hero-text">
+      <p class="hero-eyebrow cin-fade" style="--d:.1s">
+        <span class="dot-pulse"></span>
+        <span data-en="Available · Santo Domingo, RD" data-es="Disponible · Santo Domingo, RD">Disponible · Santo Domingo, RD</span>
       </p>
-      <div class="hero-actions reveal">
-        <a href="#proyectos" class="btn btn-primary">Ver proyectos <span>→</span></a>
-        <a href="#contacto" class="btn btn-ghost">Hablemos</a>
-      </div>
-      <div class="hero-stats reveal">
-        <div class="stat">
-          <span class="stat-num">5+</span>
-          <span class="stat-label">Proyectos<br>completados</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">3+</span>
-          <span class="stat-label">Años en<br>entornos corporativos</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">10+</span>
-          <span class="stat-label">Tecnologías<br>dominadas</span>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
 
-  <!-- SOBRE MÍ -->
-  <section class="about" id="sobre-mi">
-    <div class="container">
-      <div class="section-label reveal">
-        <span class="label-num">01</span>
-        <span>Sobre mí</span>
+      <h1 class="hero-headline cin-fade" style="--d:.25s">
+        <span class="h-line" data-en="Code that" data-es="Código que">Código que</span>
+        <span class="h-line italic-serif" data-en="understands" data-es="entiende el">entiende el</span>
+        <span class="h-line" data-en="business." data-es="negocio.">negocio.</span>
+      </h1>
+
+      <p class="hero-sub cin-fade" style="--d:.45s">
+        <span data-en="Full Stack Developer & Data Analyst" data-es="Desarrollador Full Stack & Analista de Datos">Full Stack Developer & Data Analyst</span>
+      </p>
+
+      <div class="hero-actions cin-fade" style="--d:.6s">
+        <a href="#work" class="btn-main">
+          <span data-en="See my work" data-es="Ver proyectos">See my work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">
+          <span data-en="Get in touch" data-es="Hablemos">Get in touch</span>
+        </a>
       </div>
-      <div class="about-grid">
-        <div class="about-text">
-          <h2 class="section-title reveal">El código que<br>entiende el<br><em>negocio.</em></h2>
-          <div class="about-body reveal">
-            <p>
-              Soy Ingeniero en Sistemas en formación (UNPHU, egreso dic. 2026) con enfoque en <strong>desarrollo web full stack</strong> y <strong>análisis de datos</strong>. Construyo aplicaciones con .NET Core, Python y React, y diseño soluciones de datos con SQL Server y herramientas cloud.
-            </p>
-            <p>
-              Mi trayectoria previa como <strong>Team Manager en Customer Experience</strong> me dio algo que pocos perfiles técnicos tienen: entiendo el negocio antes de escribir código. En entornos donde la precisión no es opcional, eso marca la diferencia.
-            </p>
-            <p>
-              Recientemente, tome como experiencia la pasantía de <strong>Infraestructura IT & Ciberseguridad</strong> en Llortech, trabajando con redes WAN, Cisco, Fortinet y virtualización en entidades reguladas.
-            </p>
-          </div>
-          <div class="about-badges reveal">
-            <span class="badge">☁️ AWS Certified</span>
-            <span class="badge">🔷 Azure AI/ML</span>
-            <span class="badge">📊 IBM Data Analytics</span>
-            <span class="badge">🌐 Bilingüe ES/EN</span>
-          </div>
+
+      <div class="hero-kpis cin-fade" style="--d:.75s">
+        <div class="kpi">
+          <span class="kpi-n">6+</span>
+          <span class="kpi-l" data-en="Projects" data-es="Proyectos">Projects</span>
         </div>
-        <div class="about-visual reveal">
-          <div class="about-card">
-            <div class="card-header">
-              <span class="card-dot red"></span>
-              <span class="card-dot yellow"></span>
-              <span class="card-dot green"></span>
-              <span class="card-filename">harold.profile.ts</span>
-            </div>
-            <pre class="code-block"><code><span class="c-keyword">const</span> <span class="c-var">harold</span> = {
-  <span class="c-prop">nombre</span>: <span class="c-str">"Harold Toribio de Jesús"</span>,
-  <span class="c-prop">ubicación</span>: <span class="c-str">"Santo Domingo, RD"</span>,
-  <span class="c-prop">email</span>: <span class="c-str">"htoribio88@gmail.com"</span>,
-  <span class="c-prop">rol</span>: <span class="c-str">"Full Stack Dev & Data Analyst"</span>,
-  <span class="c-prop">enfoque</span>: <span class="c-str">"Ingeniero en Sistemas Computacionales"</span>,
-  <span class="c-prop">stack</span>: [
-    <span class="c-str">"C# · .NET 8"</span>, <span class="c-str">"React"</span>,
-    <span class="c-str">"Python"</span>, <span class="c-str">"SQL Server"</span>,
-    <span class="c-str">"AWS"</span>, <span class="c-str">"Azure"</span>, <span class="c-str">"Docker"</span>
-  ],
-  <span class="c-prop">disponible</span>: <span class="c-bool">true</span>,
-  <span class="c-prop">egreso</span>: <span class="c-str">"Diciembre 2026"</span>,
-};</code></pre>
-          </div>
+        <div class="kpi-sep"></div>
+        <div class="kpi">
+          <span class="kpi-n">85K+</span>
+          <span class="kpi-l" data-en="Records analyzed" data-es="Registros analizados">Records analyzed</span>
+        </div>
+        <div class="kpi-sep"></div>
+        <div class="kpi">
+          <span class="kpi-n">2</span>
+          <span class="kpi-l" data-en="Cloud certs" data-es="Certs cloud">Cloud certs</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- EXPERIENCIA -->
-  <section class="experience" id="experiencia">
-    <div class="container">
-      <div class="section-label reveal">
-        <span class="label-num">02</span>
-        <span>Experiencia</span>
+    <!-- RIGHT: photo -->
+    <div class="hero-photo-frame cin-fade" style="--d:.3s">
+      <div class="hero-photo-inner">
+        <img src="img/profile.webp" alt="Harold Toribio" class="hero-photo"/>
+        <div class="photo-overlay"></div>
       </div>
-      <h2 class="section-title reveal">Trayectoria<br>profesional</h2>
-      <div class="timeline">
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker">
-            <div class="marker-dot active"></div>
-            <div class="marker-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div>
-                <h3 class="job-title">Pasante — Infraestructura IT & Ciberseguridad</h3>
-                <p class="job-company">Llortech Technology Solutions · Santo Domingo, RD</p>
-              </div>
-              <span class="job-date">Dic. 2025 – Mar. 2026</span>
-            </div>
-            <ul class="job-desc">
-              <li>Implemento y mantengo infraestructura de red en entornos multi-sucursal: redes WAN, telefonía IP y conectividad con equipos <strong>Cisco, Fortinet y Ubiquiti</strong>.</li>
-              <li>Colaboro en proyectos de ciberseguridad, virtualización y MDM — áreas críticas en entidades reguladas como bancos y fintechs.</li>
-              <li>Gestiono mantenimiento preventivo y correctivo de servidores, garantizando continuidad operativa.</li>
-              <li>Resuelvo incidencias técnicas bajo criterios de disponibilidad del negocio, minimizando tiempo de respuesta e impacto al usuario.</li>
-            </ul>
-            <div class="job-tags">
-              <span>Cisco</span><span>Fortinet</span><span>Ubiquiti</span><span>WAN</span><span>MDM</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-            <div class="marker-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div>
-                <h3 class="job-title">Team Manager — Customer Experience</h3>
-                <p class="job-company">Alorica</p>
-              </div>
-              <span class="job-date">Dic. 2024 – Nov. 2025</span>
-            </div>
-            <ul class="job-desc">
-              <li>Lideré un equipo de agentes en entorno de alto volumen, gestionando KPIs: <strong>CSAT, FCR</strong> y tiempo de resolución.</li>
-              <li>Conduje sesiones de coaching individual y monitoreé calidad de llamadas, generando reportes de desempeño para <strong>decisiones basadas en datos</strong>.</li>
-              <li>Desarrollé habilidades directamente aplicables al sector financiero: gestión por métricas, comunicación ejecutiva y toma de decisiones bajo presión.</li>
-            </ul>
-            <div class="job-tags">
-              <span>Liderazgo</span><span>KPIs</span><span>Data-driven</span><span>Coaching</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div>
-                <h3 class="job-title">Customer Experience Specialist — Telecomunicaciones</h3>
-                <p class="job-company">Alorica</p>
-              </div>
-              <span class="job-date">Abr. 2022 – Dic. 2024</span>
-            </div>
-            <ul class="job-desc">
-              <li>Brindé soporte especializado a clientes de telecomunicaciones, gestionando solicitudes técnicas y administración de cuentas bajo altos estándares de calidad.</li>
-              <li>Cumplí consistentemente metas de <strong>CSAT y FCR</strong>, colaborando con equipos técnicos para escalar y resolver problemas de alto impacto.</li>
-            </ul>
-            <div class="job-tags">
-              <span>CSAT</span><span>FCR</span><span>Soporte técnico</span><span>Telecomunicaciones</span>
-            </div>
-          </div>
-        </div>
-
+      <div class="photo-tag">
+        <span class="mono-xs">Ing. Sistemas Computacionales</span>
+        <span class="mono-xs accent-text">UNPHU · 2026</span>
       </div>
     </div>
-  </section>
 
-  <!-- PROYECTOS -->
-  <section class="projects" id="proyectos">
-    <div class="container">
-      <div class="section-label reveal">
-        <span class="label-num">03</span>
-        <span>Proyectos</span>
-      </div>
-      <h2 class="section-title reveal">Soluciones que<br>funcionan en<br><em>producción.</em></h2>
+  </div>
 
-      <div class="projects-grid">
+  <!-- scroll cue -->
+  <div class="scroll-cue">
+    <div class="scroll-wheel"><div class="scroll-dot"></div></div>
+    <span class="mono-xs" data-en="scroll" data-es="scroll">scroll</span>
+  </div>
+</section>
 
-        <!-- Proyecto destacado -->
-        <div class="project-card featured reveal" data-tilt>
-          <div class="project-card-bg"></div>
-          <div class="project-meta">
-            <span class="project-type personal">Personal</span>
-            <span class="project-date">Ene – Feb 2026</span>
-          </div>
-          <h3 class="project-title">Sistema Predictivo de Abandono de Clientes <span class="project-highlight">(Churn)</span></h3>
-          <p class="project-desc">
-            Modelo de regresión logística para predecir abandono de clientes en servicios financieros — directamente aplicable a análisis de cartera en banca. Incluye dashboard ejecutivo interactivo con KPIs y probabilidad de churn por cliente.
-          </p>
-          <div class="project-stack">
-            <span>Python</span><span>scikit-learn</span><span>FastAPI</span><span>HTML/JS</span><span>Docker</span>
-          </div>
-          <div class="project-highlights">
-            <div class="highlight-item">
-              <span class="h-icon">🎯</span>
-              <span>Regresión logística</span>
-            </div>
-            <div class="highlight-item">
-              <span class="h-icon">📊</span>
-              <span>Dashboard ejecutivo</span>
-            </div>
-            <div class="highlight-item">
-              <span class="h-icon">🐳</span>
-              <span>Containerizado</span>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/HaroldToribio/sistema-inventario-inteligente" target="_blank" class="project-link">Ver código <span>→</span></a>
-          </div>
-        </div>
+<!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░
+     SCENE 2 — WORK
+░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<section class="scene scene-dark" id="work">
+  <div class="scene-inner">
 
-        <div class="project-card reveal" data-tilt>
-          <div class="project-meta">
-            <span class="project-type academic">Académico</span>
-            <span class="project-date">Dic 2025 – Ene 2026</span>
-          </div>
-          <h3 class="project-title">Sistema de Gestión de Inventarios Full Stack</h3>
-          <p class="project-desc">
-            API RESTful en C# (.NET 8) con Entity Framework y frontend en Vanilla JS. Implementa patrones de diseño, asincronía y documentación con Swagger.
-          </p>
-          <div class="project-stack">
-            <span>C#</span><span>.NET 8</span><span>Entity Framework</span><span>Swagger</span><span>Vanilla JS</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/HaroldToribio/PruebaTecnica-Books" target="_blank" class="project-link">Ver código <span>→</span></a>
-          </div>
-        </div>
-
-        <div class="project-card reveal" data-tilt>
-          <div class="project-meta">
-            <span class="project-type academic">Académico</span>
-            <span class="project-date">Nov – Dic 2025</span>
-          </div>
-          <h3 class="project-title">Product & Sales Management System</h3>
-          <p class="project-desc">
-            Aplicación full stack para gestión de inventarios, clientes y transacciones de ventas. Enfocada en seguridad y arquitectura limpia.
-          </p>
-          <div class="project-stack">
-            <span>C#</span><span>.NET</span><span>SQL Server</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/HaroldToribio/product-sales-system" target="_blank" class="project-link">Ver código <span>→</span></a>
-          </div>
-        </div>
-
-        <div class="project-card reveal" data-tilt>
-          <div class="project-meta">
-            <span class="project-type academic">UNPHU</span>
-            <span class="project-date">May – Ago 2025</span>
-          </div>
-          <h3 class="project-title">Sistema de Gestión de Transporte</h3>
-          <p class="project-desc">
-            API REST en .NET con frontend en React. CRUD completo para autobuses, rutas, horarios y reservas. Automatización que redujo errores operativos en el flujo de reservas.
-          </p>
-          <div class="project-stack">
-            <span>.NET</span><span>React</span><span>SQL Server</span><span>Swagger</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/HaroldToribio/BusManagementSystem" target="_blank" class="project-link">Ver código <span>→</span></a>
-          </div>
-        </div>
-
-        <div class="project-card reveal" data-tilt>
-          <div class="project-meta">
-            <span class="project-type academic">UNPHU</span>
-            <span class="project-date">Oct – Dic 2024</span>
-          </div>
-          <h3 class="project-title">TutorConnect — Plataforma de Tutorías</h3>
-          <p class="project-desc">
-            Plataforma web con Django (Python). Diseño responsivo, estructura modular y flujos diferenciados por rol (tutor / estudiante).
-          </p>
-          <div class="project-stack">
-            <span>Django</span><span>Python</span><span>HTML/CSS/JS</span>
-          </div>
-          <div class="project-links">
-            <a href="https://haroldtoribio.github.io/TutorConnect/" target="_blank" class="project-link">Ver demo <span>→</span></a>
-          </div>
-        </div>
-
-      </div>
+    <div class="scene-label">
+      <span class="mono-xs accent-text">01 /</span>
+      <span class="mono-xs" data-en="Selected work" data-es="Proyectos seleccionados">Proyectos seleccionados</span>
     </div>
-  </section>
 
-  <!-- STACK -->
-  <section class="stack" id="stack">
-    <div class="container">
-      <div class="section-label reveal">
-        <span class="label-num">04</span>
-        <span>Stack técnico</span>
+    <h2 class="scene-title cin-rise">
+      <span data-en="What I" data-es="Lo que">Lo que</span><br>
+      <em data-en="build." data-es="construyo.">construyo.</em>
+    </h2>
+
+    <!-- FEATURED -->
+    <div class="feat-project cin-rise">
+      <div class="feat-left">
+        <div class="feat-number mono-xs">01</div>
+        <h3 class="feat-title">
+          Customer<br>
+          <em>Churn</em><br>
+          Prediction
+        </h3>
+        <div class="feat-tags">
+          <span>Python</span><span>scikit-learn</span><span>FastAPI</span><span>Docker</span>
+        </div>
+        <a href="https://github.com/HaroldToribio/customer-churn-prediction-system" target="_blank" class="proj-arrow-link">
+          <span data-en="View repo" data-es="Ver repo">View repo</span>
+          <span class="arrow-circle">→</span>
+        </a>
       </div>
-      <h2 class="section-title reveal">Las herramientas<br>del oficio</h2>
-
-      <div class="stack-grid">
-
-        <div class="stack-group reveal">
-          <div class="stack-group-header">
-            <span class="group-icon">⚙️</span>
-            <h3>Backend</h3>
-          </div>
-          <div class="stack-items">
-            <div class="stack-item"><span class="tech-icon">◆</span>C# / .NET Core / .NET 8</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Python · Django · FastAPI</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>API REST · MVC</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Entity Framework</div>
-          </div>
-        </div>
-
-        <div class="stack-group reveal">
-          <div class="stack-group-header">
-            <span class="group-icon">🎨</span>
-            <h3>Frontend</h3>
-          </div>
-          <div class="stack-items">
-            <div class="stack-item"><span class="tech-icon">◆</span>React · JavaScript (ES6+)</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>HTML5 · CSS3</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Bootstrap · Tailwind</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Vanilla JS</div>
-          </div>
-        </div>
-
-        <div class="stack-group reveal">
-          <div class="stack-group-header">
-            <span class="group-icon">🗄️</span>
-            <h3>Datos</h3>
-          </div>
-          <div class="stack-items">
-            <div class="stack-item"><span class="tech-icon">◆</span>SQL Server · PostgreSQL</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>MySQL · SQLite</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>scikit-learn · Pandas</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Excel avanzado</div>
-          </div>
-        </div>
-
-        <div class="stack-group reveal">
-          <div class="stack-group-header">
-            <span class="group-icon">☁️</span>
-            <h3>Cloud & DevOps</h3>
-          </div>
-          <div class="stack-items">
-            <div class="stack-item"><span class="tech-icon">◆</span>AWS (S3, Databases)</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Azure (AI, ML, Vision)</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Docker · GitHub Actions</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Git · Postman · Swagger</div>
-          </div>
-        </div>
-
-        <div class="stack-group reveal">
-          <div class="stack-group-header">
-            <span class="group-icon">🛡️</span>
-            <h3>Redes & Seguridad</h3>
-          </div>
-          <div class="stack-items">
-            <div class="stack-item"><span class="tech-icon">◆</span>Cisco · Fortinet</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Ubiquiti · WAN</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Telefonía IP</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>MDM · Virtualización</div>
-          </div>
-        </div>
-
-        <div class="stack-group reveal">
-          <div class="stack-group-header">
-            <span class="group-icon">📜</span>
-            <h3>Certificaciones</h3>
-          </div>
-          <div class="stack-items">
-            <div class="stack-item"><span class="tech-icon">◆</span>AWS Educate: Cloud 101</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Azure AI-900 · Azure ML</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>IBM Data Analytics</div>
-            <div class="stack-item"><span class="tech-icon">◆</span>Cisco: Apply AI</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <div class="container">
-      <div class="section-label reveal">
-        <span class="label-num">05</span>
-        <span>Contacto</span>
-      </div>
-      <div class="contact-inner">
-        <div class="contact-text reveal">
-          <h2 class="contact-title">¿Tienes un proyecto<br>en mente? <em>Hablemos.</em></h2>
-          <p class="contact-desc">
-            Estoy disponible para roles full-time, freelance o consultoría técnica — especialmente en el sector Fintech, Banca Digital y Data Analytics.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:htoribio88@gmail.com" class="contact-link">
-              <span class="cl-icon">✉</span>
-              <div>
-                <span class="cl-label">Email</span>
-                <span class="cl-value">htoribio88@gmail.com</span>
-              </div>
-              <span class="cl-arrow">→</span>
-            </a>
-            <a href="https://www.linkedin.com/in/haroldtoribio" target="_blank" class="contact-link">
-              <span class="cl-icon">in</span>
-              <div>
-                <span class="cl-label">LinkedIn</span>
-                <span class="cl-value">harold-toribio-de-jesus</span>
-              </div>
-              <span class="cl-arrow">→</span>
-            </a>
-            <a href="https://github.com/HaroldToribio" target="_blank" class="contact-link">
-              <span class="cl-icon">⌥</span>
-              <div>
-                <span class="cl-label">GitHub</span>
-                <span class="cl-value">HaroldToribio</span>
-              </div>
-              <span class="cl-arrow">→</span>
-            </a>
-            <a href="tel:+18293807093" class="contact-link">
-              <span class="cl-icon">📞</span>
-              <div>
-                <span class="cl-label">Teléfono</span>
-                <span class="cl-value">(829) 380-7093</span>
-              </div>
-              <span class="cl-arrow">→</span>
-            </a>
-          </div>
-        </div>
-        <div class="contact-form-wrap reveal">
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" placeholder="Tu nombre" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="tu@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea id="message" rows="5" placeholder="Cuéntame sobre tu proyecto o propuesta..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary full-width">
-              Enviar mensaje <span>→</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-logo">HT<span class="accent">.</span></span>
-        <p class="footer-text">
-          Harold Toribio de Jesús · Full Stack Developer & Data Analyst · Santo Domingo, RD
+      <div class="feat-right">
+        <p class="feat-desc" data-en="Logistic regression model to predict customer churn in financial services. Decoupled backend/frontend architecture, containerized and cloud-ready. Includes an executive dashboard with KPIs and per-client churn probability." data-es="Modelo de regresión logística para predecir abandono de clientes en servicios financieros. Arquitectura desacoplada contenerizada y lista para cloud. Incluye dashboard ejecutivo con KPIs y probabilidad de churn por cliente.">
+          Modelo de regresión logística para predecir abandono de clientes en servicios financieros. Arquitectura desacoplada contenerizada y lista para cloud. Incluye dashboard ejecutivo con KPIs y probabilidad de churn por cliente.
         </p>
-        <div class="footer-links">
-          <a href="mailto:htoribio88@gmail.com">Email</a>
-          <a href="https://github.com/HaroldToribio" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/haroldtoribio" target="_blank">LinkedIn</a>
+        <div class="feat-specs">
+          <div class="spec-row"><span class="spec-k" data-en="Model" data-es="Modelo">Modelo</span><span class="spec-v">Logistic regression · scikit-learn</span></div>
+          <div class="spec-row"><span class="spec-k">API</span><span class="spec-v">FastAPI · Swagger docs</span></div>
+          <div class="spec-row"><span class="spec-k" data-en="Output" data-es="Salida">Salida</span><span class="spec-v" data-en="Executive KPI dashboard" data-es="Dashboard ejecutivo KPI">Dashboard ejecutivo KPI</span></div>
+          <div class="spec-row"><span class="spec-k">Deploy</span><span class="spec-v">Docker · cloud-ready</span></div>
         </div>
       </div>
-      <p class="footer-copy">© 2026 Harold Toribio · Construido con código limpio y pasión por la ingeniería.</p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <!-- GRID -->
+    <div class="proj-grid">
+
+      <article class="proj-card cin-rise" style="--ri:0">
+        <div class="proj-img-box">
+          <img src="img/projects/mtjtransport.png" alt="MTJ Transport" class="proj-thumb"/>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <span class="proj-idx mono-xs">02</span>
+            <span class="proj-badge biz" data-en="Business" data-es="Empresarial">Empresarial</span>
+          </div>
+          <h3 class="proj-card-title">MTJ Transport<br><em>Recruitment</em></h3>
+          <p class="proj-card-desc" data-en="CDL specialist recruitment platform. React + TypeScript, focused on application UX." data-es="Plataforma de reclutamiento para especialistas CDL. React + TypeScript, enfocada en UX del proceso de aplicación.">Plataforma de reclutamiento para especialistas CDL. React + TypeScript.</p>
+          <div class="proj-card-stack"><span>React</span><span>TypeScript</span></div>
+          <a href="https://mtjtransport.netlify.app/" target="_blank" class="proj-card-link">
+            <span data-en="Live demo" data-es="Ver demo">Ver demo</span> →
+          </a>
+        </div>
+      </article>
+
+      <article class="proj-card cin-rise" style="--ri:1">
+        <div class="proj-img-box">
+          <img src="img/projects/busmanagement.jpg" alt="Sistema de Gestión de Autobuses" class="proj-thumb"/>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <span class="proj-idx mono-xs">03</span>
+            <span class="proj-badge acad" data-en="Academic" data-es="Académico">Académico</span>
+          </div>
+          <h3 class="proj-card-title">Gestión de<br><em>Autobuses</em></h3>
+          <p class="proj-card-desc" data-en="Full stack transport system with bilingual UI. Complete CRUD for buses, routes, schedules and reservations. Automation that reduced operational errors." data-es="Sistema full stack de transporte con interfaz bilingüe. CRUD completo para autobuses, rutas, horarios y reservas. Automatización que redujo errores operativos.">Sistema full stack de transporte con interfaz bilingüe. CRUD completo para autobuses, rutas, horarios y reservas.</p>
+          <div class="proj-card-stack"><span>.NET Core</span><span>React</span><span>SQL Server</span></div>
+          <a href="https://github.com/HaroldToribio/BusManagementSystem" target="_blank" class="proj-card-link">
+            <span data-en="View repo" data-es="Ver repo">Ver repo</span> →
+          </a>
+        </div>
+      </article>
+
+      <article class="proj-card cin-rise" style="--ri:2">
+        <div class="proj-img-box">
+          <img src="img/projects/inventory.jpg" alt="Dashboard de Ventas con recomendaciones ML" class="proj-thumb"/>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <span class="proj-idx mono-xs">04</span>
+            <span class="proj-badge acad" data-en="Academic" data-es="Académico">Académico</span>
+          </div>
+          <h3 class="proj-card-title">Dashboard de<br><em>Ventas + ML</em></h3>
+          <p class="proj-card-desc" data-en="Sales management dashboard with ML-powered product recommendations (collaborative filtering) and customer purchase analysis." data-es="Dashboard de gestión de ventas con recomendaciones de productos basadas en ML (filtrado colaborativo) y análisis de compras por cliente.">Dashboard de gestión de ventas con recomendaciones ML (filtrado colaborativo) y análisis de compras por cliente.</p>
+          <div class="proj-card-stack"><span>Python</span><span>ML</span><span>SQL</span></div>
+          <a href="https://github.com/HaroldToribio/product-sales-system" target="_blank" class="proj-card-link">
+            <span data-en="View repo" data-es="Ver repo">Ver repo</span> →
+          </a>
+        </div>
+      </article>
+
+      <article class="proj-card cin-rise" style="--ri:3">
+        <div class="proj-img-box">
+          <img src="img/projects/tutorconnect.jpg" alt="TutorConnect" class="proj-thumb"/>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-top">
+            <span class="proj-idx mono-xs">05</span>
+            <span class="proj-badge acad" data-en="Academic" data-es="Académico">Académico</span>
+          </div>
+          <h3 class="proj-card-title">TutorConnect<br><em>EdTech</em></h3>
+          <p class="proj-card-desc" data-en="EdTech platform with role-differentiated flows (tutor/student), responsive design and modular structure." data-es="Plataforma EdTech con flujos diferenciados por rol (tutor/estudiante), diseño responsivo y estructura modular.">Plataforma EdTech con flujos diferenciados por rol. Django + Python.</p>
+          <div class="proj-card-stack"><span>Django</span><span>Python</span><span>HTML/CSS/JS</span></div>
+          <a href="https://github.com/HaroldToribio/TutorConnect" target="_blank" class="proj-card-link">
+            <span data-en="View demo" data-es="Ver demo">Ver demo</span> →
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░
+     SCENE 3 — ABOUT
+░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<section class="scene" id="about">
+  <div class="scene-inner">
+    <div class="scene-label">
+      <span class="mono-xs accent-text">02 /</span>
+      <span class="mono-xs" data-en="About me" data-es="Sobre mí">Sobre mí</span>
+    </div>
+
+    <div class="about-split">
+      <div class="about-left cin-rise">
+        <h2 class="scene-title">
+          <span data-en="The engineer" data-es="El ingeniero">El ingeniero</span><br>
+          <em data-en="behind the code." data-es="detrás del código.">detrás del código.</em>
+        </h2>
+        <div class="about-body">
+          <p data-en="Computer Systems Engineer (UNPHU) focused on full stack development and data analysis. I build with .NET Core, Python and React, and design data solutions on SQL Server and cloud platforms certified in AWS and Azure." data-es="Ingeniero en Sistemas Computacionales (UNPHU) con enfoque en desarrollo web full stack y análisis de datos. Construyo con .NET Core, Python y React, y diseño soluciones de datos en SQL Server y plataformas cloud certificadas en AWS y Azure.">
+            Ingeniero en Sistemas Computacionales (UNPHU) con enfoque en desarrollo web full stack y análisis de datos. Construyo con .NET Core, Python y React, y diseño soluciones de datos en SQL Server y plataformas cloud certificadas en AWS y Azure.
+          </p>
+          <p data-en="My path in team leadership and high-volume corporate environments gave me a perspective few technical profiles have: I understand the business before I write a line of code. When precision isn't optional — that makes all the difference." data-es="Mi trayectoria en liderazgo de equipos y entornos corporativos de alto volumen me dio una perspectiva que pocos perfiles técnicos tienen: entiendo el negocio antes de escribir código. Cuando la precisión no es opcional, eso marca la diferencia.">
+            Mi trayectoria en liderazgo de equipos y entornos corporativos de alto volumen me dio una perspectiva que pocos perfiles técnicos tienen: entiendo el negocio antes de escribir código.
+          </p>
+        </div>
+        <div class="about-badges">
+          <span>AWS Educate</span>
+          <span>Azure AI-900</span>
+          <span>Azure ML</span>
+          <span>IBM Data Analytics</span>
+          <span>Cisco AI</span>
+          <span>INDOTEL Full Stack</span>
+          <span data-en="Bilingual ES/EN" data-es="Bilingüe ES/EN">Bilingüe ES/EN</span>
+        </div>
+      </div>
+
+      <div class="about-right cin-rise">
+        <div class="exp-list">
+          <div class="exp-entry">
+            <div class="exp-line-wrap">
+              <div class="exp-dot active"></div>
+              <div class="exp-vline"></div>
+            </div>
+            <div class="exp-content">
+              <span class="exp-period mono-xs">Abr 2026 – May 2026</span>
+              <strong class="exp-role" data-en="Data & Product Support Specialist" data-es="Data & Product Support Specialist">Data &amp; Product Support Specialist</strong>
+              <span class="exp-co accent-text">Horatio</span>
+              <p class="exp-detail" data-en="Analyzed e-commerce & CX datasets for BPO clients. Cleaned and explored 85,000+ customer satisfaction records with Python (pandas, scikit-learn), building KPI reports and data pipelines." data-es="Analicé datasets de e-commerce y CX para clientes BPO. Limpié y exploré +85,000 registros de satisfacción con Python (pandas, scikit-learn), construyendo reportes KPI y pipelines de datos.">Analicé datasets de e-commerce y CX para clientes BPO. Limpié y exploré +85,000 registros de satisfacción con Python (pandas, scikit-learn), construyendo reportes KPI y pipelines de datos.</p>
+            </div>
+          </div>
+          <div class="exp-entry">
+            <div class="exp-line-wrap">
+              <div class="exp-dot"></div>
+              <div class="exp-vline"></div>
+            </div>
+            <div class="exp-content">
+              <span class="exp-period mono-xs">Dic 2025 – Mar 2026</span>
+              <strong class="exp-role" data-en="IT & Cybersecurity Intern" data-es="Pasante IT & Ciberseguridad">Pasante IT &amp; Ciberseguridad</strong>
+              <span class="exp-co accent-text">Llortech Technology Solutions</span>
+              <p class="exp-detail" data-en="Multi-branch network infrastructure (WAN, VoIP, Cisco · Fortinet · Ubiquiti). Cybersecurity, virtualization and MDM in regulated environments." data-es="Infraestructura de red multi-sucursal (WAN, VoIP, Cisco · Fortinet · Ubiquiti). Ciberseguridad, virtualización y MDM en entornos regulados.">Infraestructura de red multi-sucursal. Ciberseguridad, virtualización y MDM en entornos regulados.</p>
+            </div>
+          </div>
+          <div class="exp-entry">
+            <div class="exp-line-wrap">
+              <div class="exp-dot"></div>
+              <div class="exp-vline"></div>
+            </div>
+            <div class="exp-content">
+              <span class="exp-period mono-xs">Dic 2024 – Nov 2025</span>
+              <strong class="exp-role" data-en="Team Manager — CX" data-es="Team Manager — CX">Team Manager — CX</strong>
+              <span class="exp-co accent-text">Alorica</span>
+              <p class="exp-detail" data-en="Led a team in a high-volume environment. KPI management (CSAT, FCR), coaching and data-driven performance reports." data-es="Lideré equipo en entorno de alto volumen. Gestión de KPIs (CSAT, FCR), coaching y reportes de desempeño basados en datos.">Lideré equipo en entorno de alto volumen. KPIs CSAT/FCR, coaching y reportes de desempeño basados en datos.</p>
+            </div>
+          </div>
+          <div class="exp-entry">
+            <div class="exp-line-wrap">
+              <div class="exp-dot"></div>
+            </div>
+            <div class="exp-content">
+              <span class="exp-period mono-xs">Abr 2022 – Dic 2024</span>
+              <strong class="exp-role" data-en="CX Specialist — Telecom" data-es="CX Specialist — Telecomunicaciones">CX Specialist — Telecomunicaciones</strong>
+              <span class="exp-co accent-text">Alorica</span>
+              <p class="exp-detail" data-en="Specialized support for telecom clients. Consistent CSAT and FCR targets met in high-impact escalations." data-es="Soporte especializado para clientes de telecomunicaciones. Metas CSAT y FCR cumplidas consistentemente en escalaciones de alto impacto.">Soporte especializado en telecomunicaciones. Metas CSAT y FCR cumplidas consistentemente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░
+     SCENE 4 — STACK
+░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<section class="scene scene-dark" id="stack">
+  <div class="scene-inner">
+    <div class="scene-label">
+      <span class="mono-xs accent-text">03 /</span>
+      <span class="mono-xs" data-en="Tech stack" data-es="Stack técnico">Stack técnico</span>
+    </div>
+    <h2 class="scene-title cin-rise">
+      <span data-en="Tools of" data-es="Las">Las</span><br>
+      <em data-en="the craft." data-es="herramientas.">herramientas.</em>
+    </h2>
+
+    <div class="stack-bento">
+      <div class="bento-card bento-lg cin-rise" style="--ri:0">
+        <span class="bento-label mono-xs" data-en="Backend" data-es="Backend">Backend</span>
+        <ul class="bento-list">
+          <li><span class="tech-bullet">→</span>C# · .NET Core · .NET 8</li>
+          <li><span class="tech-bullet">→</span>Python · Django · FastAPI</li>
+          <li><span class="tech-bullet">→</span>API REST · MVC</li>
+          <li><span class="tech-bullet">→</span>Entity Framework</li>
+        </ul>
+      </div>
+      <div class="bento-card bento-md cin-rise" style="--ri:1">
+        <span class="bento-label mono-xs" data-en="Frontend" data-es="Frontend">Frontend</span>
+        <ul class="bento-list">
+          <li><span class="tech-bullet">→</span>React · TypeScript</li>
+          <li><span class="tech-bullet">→</span>JavaScript ES6+</li>
+          <li><span class="tech-bullet">→</span>HTML5 · CSS3</li>
+          <li><span class="tech-bullet">→</span>Tailwind · Bootstrap</li>
+        </ul>
+      </div>
+      <div class="bento-card bento-md cin-rise" style="--ri:2">
+        <span class="bento-label mono-xs" data-en="Data" data-es="Datos">Datos</span>
+        <ul class="bento-list">
+          <li><span class="tech-bullet">→</span>SQL Server · PostgreSQL</li>
+          <li><span class="tech-bullet">→</span>MySQL · SQLite</li>
+          <li><span class="tech-bullet">→</span>scikit-learn · Pandas</li>
+          <li><span class="tech-bullet">→</span>Excel avanzado</li>
+        </ul>
+      </div>
+      <div class="bento-card bento-sm cin-rise" style="--ri:3">
+        <span class="bento-label mono-xs">Cloud</span>
+        <ul class="bento-list">
+          <li><span class="tech-bullet">→</span>AWS (S3, DBs)</li>
+          <li><span class="tech-bullet">→</span>Azure AI · ML</li>
+          <li><span class="tech-bullet">→</span>Docker</li>
+          <li><span class="tech-bullet">→</span>GitHub Actions</li>
+        </ul>
+      </div>
+      <div class="bento-card bento-sm cin-rise" style="--ri:4">
+        <span class="bento-label mono-xs" data-en="Tools" data-es="Herramientas">Herramientas</span>
+        <ul class="bento-list">
+          <li><span class="tech-bullet">→</span>Git · Postman</li>
+          <li><span class="tech-bullet">→</span>Swagger</li>
+          <li><span class="tech-bullet">→</span>Cisco · Fortinet</li>
+          <li><span class="tech-bullet">→</span>Unit Testing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░
+     SCENE 5 — CONTACT
+░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+<section class="scene" id="contact">
+  <div class="scene-inner">
+    <div class="scene-label">
+      <span class="mono-xs accent-text">04 /</span>
+      <span class="mono-xs" data-en="Get in touch" data-es="Contacto">Contacto</span>
+    </div>
+
+    <div class="contact-split">
+      <div class="contact-left cin-rise">
+        <h2 class="scene-title">
+          <span data-en="Let's build" data-es="Construyamos">Construyamos</span><br>
+          <em data-en="something." data-es="algo juntos.">algo juntos.</em>
+        </h2>
+        <p class="contact-sub" data-en="Open to full-time roles, freelance projects or technical consulting. Let's talk." data-es="Disponible para roles full-time, proyectos freelance o consultoría técnica. Hablemos.">
+          Disponible para roles full-time, proyectos freelance o consultoría técnica. Hablemos.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:htoribio88@gmail.com" class="contact-item">
+            <span class="ci-label mono-xs">Email</span>
+            <span class="ci-value">htoribio88@gmail.com</span>
+            <span class="ci-arr">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230" target="_blank" class="contact-item">
+            <span class="ci-label mono-xs">LinkedIn</span>
+            <span class="ci-value">harold-toribio-de-jesus</span>
+            <span class="ci-arr">↗</span>
+          </a>
+          <a href="https://github.com/HaroldToribio" target="_blank" class="contact-item">
+            <span class="ci-label mono-xs">GitHub</span>
+            <span class="ci-value">HaroldToribio</span>
+            <span class="ci-arr">↗</span>
+          </a>
+          <a href="tel:+18293807093" class="contact-item">
+            <span class="ci-label mono-xs" data-en="Phone" data-es="Teléfono">Teléfono</span>
+            <span class="ci-value">(829) 380-7093</span>
+            <span class="ci-arr">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right cin-rise">
+        <form id="contactForm" class="c-form">
+          <div class="c-field">
+            <label data-en="Name" data-es="Nombre">Nombre</label>
+            <input type="text" required placeholder="Tu nombre" data-ph-en="Your name" data-ph-es="Tu nombre"/>
+          </div>
+          <div class="c-field">
+            <label>Email</label>
+            <input type="email" required placeholder="tu@email.com" data-ph-en="you@email.com" data-ph-es="tu@email.com"/>
+          </div>
+          <div class="c-field">
+            <label data-en="Message" data-es="Mensaje">Mensaje</label>
+            <textarea rows="5" required placeholder="Cuéntame sobre tu proyecto..." data-ph-en="Tell me about your project..." data-ph-es="Cuéntame sobre tu proyecto..."></textarea>
+          </div>
+          <button type="submit" class="c-submit">
+            <span class="c-submit-text" data-en="Send message" data-es="Enviar mensaje">Enviar mensaje</span>
+            <span class="c-submit-icon">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+  <div class="footer-left">
+    <span class="footer-name">Harold Toribio de Jesús</span>
+    <span class="mono-xs footer-loc">Santo Domingo, RD · 2026</span>
+  </div>
+  <div class="footer-center mono-xs">
+    "Código que entiende el negocio."
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/HaroldToribio" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/harold-toribio-de-jesus-54bbb8230" target="_blank">LinkedIn</a>
+    <a href="mailto:htoribio88@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
